@@ -1,0 +1,136 @@
+@import "_common";
+
+// adjust number
+.adjust-box{
+    height: 40px;
+    line-height: 40px;
+    padding-top: 5px;
+}
+.adjust-box .adjust-prev, .adjust-box .adjust-next, .adjust-box .adjust-num{
+    float: left;
+    width: 33px;
+    height: 33px;
+    text-align: center;
+}
+.adjust-box input.adjust-num{
+    display: block;
+    width: 65px;
+    border: 1px solid $yellowColor;
+    background-color: $whiteColor;
+    color: $yellowColor;
+    @include border-radius(0px);
+    padding: 0 10px;
+}
+.adjust-prev{
+    @include border-radius(4px 0 0 4px);
+    @include user-select();
+    border-color: $yellowColor;
+    border-width: 1px 0 1px 1px;
+    border-style: solid;
+    background-color: #fafafa;
+}
+.adjust-next{
+    @include border-radius(0 4px 4px 0);
+    @include user-select();
+    border-color: $yellowColor;
+    border-width: 1px 1px 1px 0;
+    border-style: solid;
+    background-color: #fafafa;
+}
+.adjust-prev:before{
+    content: '';
+    height: 3px;
+    width: 15px;
+    background: #666;
+    display: block;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.adjust-next:before{
+    content: '';
+    height: 3px;
+    width: 15px;
+    background: #666;
+    display: block;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.adjust-next:after{
+    content: '';
+    height: 15px;
+    width: 3px;
+    background: #666;
+    display: block;
+    margin-top: -9px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.adjust-prev:not(.adjust-disable):active, .adjust-next:not(.adjust-disable):active{
+    background-color: $yellowColor;
+}
+.adjust-prev:active:before, .adjust-next:active:before, .adjust-next:active:after{
+    background-color: $whiteColor;
+}
+.adjust-prev.adjust-disable, .adjust-next.adjust-disable{
+    border-color: #ddd;
+}
+.adjust-disable.adjust-prev:before, .adjust-disable.adjust-next:before, .adjust-disable.adjust-next:after{
+    background: #ccc;
+}
+
+// clear button
+.clear-input-box{
+    position: relative;
+    margin: 0 35px 0 80px;
+}
+.clear-banner-box{
+    position: relative;
+    // margin: 0 35px 0 80px;
+}
+.clear-button{
+    position: absolute;
+    z-index: 10;
+    top: 0!important;
+    right: 0!important;
+    width: 35px;
+    height: 100%;
+    // display: none;
+}
+.clear-input-box .clear-button{
+    display: none;
+    right: -35px!important;
+}
+.clear-button-ico{
+    position: absolute;
+    z-index: 10;
+    width: 16px;
+    height: 16px;
+    border-radius: 30px;
+    top: 50%!important;
+    right: 7px;
+    margin: -8px 0 0 -8px;
+    background: #b1b1b1;
+    /*pointer-events: none;*/
+}
+.clear-button-ico:before{
+    content: '';
+    top: 4px;
+    left: 7px;
+    width: 2px;
+    height: 8px;
+    background: #fff;
+    position: absolute;
+    @include transform(rotate(45deg));
+}
+.clear-button-ico:after{
+    content: '';
+    top: 4px;
+    left: 7px;
+    width: 2px;
+    height: 8px;
+    background: #fff;
+    position: absolute;
+    @include transform(rotate(-45deg));
+}

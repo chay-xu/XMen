@@ -1,0 +1,56 @@
+@import "_common";
+
+// clear button
+.clear-input-box{
+    position: relative;
+    margin: 0 35px 0 80px;
+}
+.clear-banner-box{
+    position: relative;
+    // margin: 0 35px 0 80px;
+}
+.clear-button{
+    position: absolute;
+    z-index: 10;
+    top: 0!important;
+    right: 0!important;
+    width: 35px;
+    height: 100%;
+    // display: none;
+}
+.clear-input-box .clear-button{
+    display: none;
+    right: -35px!important;
+}
+.clear-button-ico{
+    position: absolute;
+    z-index: 10;
+    width: 16px;
+    height: 16px;
+    border-radius: 30px;
+    top: 50%!important;
+    right: 7px;
+    margin: -8px 0 0 -8px;
+    background: #b1b1b1;
+    /*pointer-events: none;*/
+}
+.clear-button-ico:before{
+    content: '';
+    top: 4px;
+    left: 7px;
+    width: 2px;
+    height: 8px;
+    background: #fff;
+    position: absolute;
+    @include transform(rotate(45deg));
+}
+.clear-button-ico:after{
+    content: '';
+    top: 4px;
+    left: 7px;
+    width: 2px;
+    height: 8px;
+    background: #fff;
+    position: absolute;
+    @include transform(rotate(-45deg));
+}

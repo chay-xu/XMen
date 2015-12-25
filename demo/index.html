@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta content="telephone=no" name="format-detection">
+     <!-- css section -->
+    <link href="../build/css/XMen.css?v=1" rel="stylesheet" />
+    <!-- css section end-->
+    <style>
+        input{
+            outline: 0;
+        }
+        .ipt-text{
+            width: 100%;
+            padding: 0;
+            height: 40px;
+            /*border: 0;*/
+        }
+        .banner{
+            background-color: #FDC8C8;
+            height: 60px;
+        }
+        a, input{
+            -webkit-tap-highlight-color: rgba(255,255,255,0);
+        }
+    </style>
+  
+    <script src="zepto.min.js"></script>
+</head>
+<body>
+    <!-- clear button -->
+    <div class="clear-input-box">
+        <input class="ipt-text clear-ipt" id="name" type="text" placeholder="选填">
+        <a href="javascript:;" class="clear-button">
+            <span class="clear-button-ico"></span>
+        </a>
+    </div>
+    <div class="clear-banner-box banner">
+        <div class="" id=""></div>
+        <a href="javascript:;" class="clear-button">
+            <span class="clear-button-ico"></span>
+        </a>
+    </div>
+    <!-- step number -->
+    <div class="step-box" data-step="1" data-min="100" data-max="900">
+        <span class="step-prev"></span>
+        <input id="money" class="step-num" type="tel" value="0" />
+        <span class="step-next"></span>
+        <span class="deposit-unit">元</span>
+    </div>
+    <script src="../build/js/XMen.js?v=2"></script>
+</body>
+</html>

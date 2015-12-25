@@ -1,0 +1,83 @@
+@import "_common";
+
+// step number
+.step-box{
+    height: 40px;
+    line-height: 40px;
+    padding-top: 5px;
+}
+.step-box{
+    .step-prev, .step-next, .step-num{
+        float: left;
+        width: 33px;
+        height: 33px;
+        text-align: center;
+    }
+}
+.step-box input.step-num{
+    display: block;
+    width: 65px;
+    border: 1px solid $yellowColor;
+    background-color: $whiteColor;
+    color: $yellowColor;
+    @include border-radius(0px);
+    padding: 0 10px;
+}
+.step-prev{
+    @include border-radius(4px 0 0 4px);
+    @include user-select();
+    border-color: $yellowColor;
+    border-width: 1px 0 1px 1px;
+    border-style: solid;
+    background-color: #fafafa;
+}
+.step-next{
+    @include border-radius(0 4px 4px 0);
+    @include user-select();
+    border-color: $yellowColor;
+    border-width: 1px 1px 1px 0;
+    border-style: solid;
+    background-color: #fafafa;
+}
+.step-prev:before{
+    content: '';
+    height: 3px;
+    width: 15px;
+    background: #666;
+    display: block;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.step-next:before{
+    content: '';
+    height: 3px;
+    width: 15px;
+    background: #666;
+    display: block;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.step-next:after{
+    content: '';
+    height: 15px;
+    width: 3px;
+    background: #666;
+    display: block;
+    margin-top: -9px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.step-prev:not(.step-disable):active, .step-next:not(.step-disable):active{
+    background-color: $yellowColor;
+}
+.step-prev:active:before, .step-next:active:before, .step-next:active:after{
+    background-color: $whiteColor;
+}
+.step-prev.step-disable, .step-next.step-disable{
+    border-color: #ddd;
+}
+.step-disable.step-prev:before, .step-disable.step-next:before, .step-disable.step-next:after{
+    background: #ccc;
+}
